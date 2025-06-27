@@ -16,6 +16,7 @@ public class TebakAngka {
 
         System.out.println("=== GAME TEBAK ANGKA ===");
         System.out.println("tebak angka antara 1 sampai 100!");
+        
 
 
         while (percobaan < batasPercobaan) {
