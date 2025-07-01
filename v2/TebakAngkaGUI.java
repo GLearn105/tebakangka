@@ -1,6 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -35,7 +34,6 @@ public class TebakAngkaGUI {
         else if (selected.contains("Hard")) batasAtas = 200;
         else batasAtas = 100;
             
-
         JTextField inputTebakan = new JTextField();
         JButton tombolTebak = new JButton("Tebak");
         JLabel labelHasil = new JLabel("", SwingConstants.CENTER);
@@ -56,7 +54,6 @@ public class TebakAngkaGUI {
             System.out.println("Gagal membuat log file");
             }
 
-
         // Atur angka rahasia default
         angkaRahasia = random.nextInt(100) + 1;
 
@@ -75,8 +72,6 @@ public class TebakAngkaGUI {
                         System.out.println("Gagal menulis ke log.");
                 }
 
-
-
                 if (tebakan < 1 || tebakan > batasAtas) {
                     batasInput++;
                     labelHasil.setText("Angka harus 1 - " + batasAtas);
@@ -94,7 +89,8 @@ public class TebakAngkaGUI {
                     logFile.write("Gagal. Jawaban: " + angkaRahasia + "\n");
                     labelHasil.setText("😞 Gagal! Jawaban: " + angkaRahasia);
                     tombolTebak.setEnabled(false);
-                }if (batasInput >= 2) {
+                }
+                if (batasInput >= 2) {
                     JOptionPane.showMessageDialog(frame, "goblok!!");
                     logFile.write("si tolol jawab " + tebakan);
                     System.exit(0);
@@ -114,7 +110,6 @@ public class TebakAngkaGUI {
             }
             
         });
-
 
         tombolReset.addActionListener(e -> {
             String reselected = (String) comboLevel.getSelectedItem();
